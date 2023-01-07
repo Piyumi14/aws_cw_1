@@ -6,7 +6,8 @@
 
         <title>AWS CW 1 - CICD</title>
 
-        <h1>Ha Haaaaaaa This is AWS CW 1 CICD Pipeline</h1>
+        <h1>This is AWS CW 1 CICD Pipeline</h1>
+        <h1>Testing</h1>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
