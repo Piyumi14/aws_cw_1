@@ -1,3 +1,7 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="row">
     <h1 style="text-align:center;">Upload File</h1>
     <div class="card col-sm-12" style="text-align:center;">
@@ -22,12 +26,22 @@
     <div class="card col-sm-12">
         @if (count($files) > 0)
             @foreach ($files as $file)
-                <a href="{{ url($file['downloadUrl']) }}">{{ $file['name'] }}</a>
-                <form action="{{ url($file['removeUrl']) }}" method="POST">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-default">Remove</button>
-                </form>
+                <table>
+                    <tr>
+                        <th><a href="{{ url($file['downloadUrl']) }}">{{ $file['name'] }}</a></th>
+                        <th><form action="{{ url($file['removeUrl']) }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <i class="w3-margin-left fa fa-trash w3-padding w3-xlarge w3-text-red" type="submit"></i>
+                            </form></th>
+                    </tr>
+                </table>
+{{--                <a href="{{ url($file['downloadUrl']) }}">{{ $file['name'] }}</a>--}}
+{{--                <form action="{{ url($file['removeUrl']) }}" method="POST">--}}
+{{--                    {{ csrf_field() }}--}}
+{{--                    {{ method_field('DELETE') }}--}}
+{{--                    <i class="w3-margin-left fa fa-trash w3-padding w3-xlarge w3-text-red" type="submit"></i>--}}
+{{--                </form>--}}
             @endforeach
         @else
             <p>Nothing found</p>
@@ -60,6 +74,17 @@
         color: white;
     }
 
+    .button2 {
+        background-color: darkseagreen;
+        color: black;
+        border: 3px solid red;
+    }
+
+    .button2:hover {
+        background-color: indianred;
+        color: white;
+    }
+
     .label {
         font-size: 20px;
         color: black;
@@ -70,5 +95,18 @@
         background-color: #f2f2f2;
         padding: 25px;
     }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #DDD;
+    }
+
+    tr:hover {background-color: #D6EEEE;}
 
 </style>
