@@ -32,7 +32,7 @@
                         <th><form action="{{ url($file['removeUrl']) }}" method="POST">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <i class="w3-margin-left fa fa-trash w3-padding w3-xlarge w3-text-red" type="submit"></i>
+                                <button><i class="w3-margin-center fa fa-trash w3-padding w3-xlarge w3-text-red" type="submit"></i></button>
                             </form></th>
                     </tr>
                 </table>
@@ -40,7 +40,7 @@
 {{--                <form action="{{ url($file['removeUrl']) }}" method="POST">--}}
 {{--                    {{ csrf_field() }}--}}
 {{--                    {{ method_field('DELETE') }}--}}
-{{--                    <i class="w3-margin-left fa fa-trash w3-padding w3-xlarge w3-text-red" type="submit"></i>--}}
+{{--                    <button ><i class="w3-margin-left fa fa-trash" type="submit"></i></button>--}}
 {{--                </form>--}}
             @endforeach
         @else
@@ -95,18 +95,5 @@
         background-color: #f2f2f2;
         padding: 25px;
     }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #DDD;
-    }
-
-    tr:hover {background-color: #D6EEEE;}
 
 </style>
