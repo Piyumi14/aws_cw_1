@@ -25,7 +25,6 @@ class UploadController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
         $this->validate($request, [
             'file' => 'required|max:2048'
         ]);
@@ -53,5 +52,9 @@ class UploadController extends Controller
         $name = basename($file);
         Storage::disk('s3')->download($file, $name);
         return back()->withSuccess('File downloaded successfully');
+    }
+
+    public function test(){
+        dd('123');
     }
 }
