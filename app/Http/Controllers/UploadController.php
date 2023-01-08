@@ -25,6 +25,7 @@ class UploadController extends Controller
 
     public function store(Request $request)
     {
+        dd($request);
         $this->validate($request, [
             'file' => 'required|max:2048'
         ]);
