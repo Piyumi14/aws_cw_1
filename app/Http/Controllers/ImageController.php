@@ -23,9 +23,9 @@ class ImageController extends Controller
     {
 //        dd("ddddd--------");
 
-        $this->validate($request, [
-            'file' => 'required|max:2048'
-        ]);
+//        $this->validate($request, [
+//            'file' => 'required|max:2048'
+//        ]);
 
         dd($request->hasFile('file'));
 
