@@ -27,6 +27,8 @@ class ImageController extends Controller
             'file' => 'required|max:2048'
         ]);
 
+        dd($request->hasFile('file'));
+
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $name = time() . $file->getClientOriginalName();
