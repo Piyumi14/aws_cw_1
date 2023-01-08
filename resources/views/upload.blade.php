@@ -1,17 +1,17 @@
 <div class="row">
-    <h3>Upload File</h3>
-    <div class="card col-sm-12">
+    <h1 style="text-align:center;">Upload File</h1>
+    <div class="card col-sm-12" style="text-align:center;">
 
-        <form action="{{ url('/store') }}" method="POST" enctype="multipart/form-data" class="form-inline">
+        <form action="{{ url('/store') }}" method="POST" enctype="multipart/form-data" class="container">
 
             {{ csrf_field() }}
 
             <div class="form-group">
-                <label for="file">Select File</label>
-                <input class="form-control-file" type="file" name="file" id="file">
+                <label class="label" for="file">Select File</label>
+                <input class="form-control-file label" type="file" name="file" id="file">
+                <button type="submit" class="button button1">Upload</button>
             </div>
 
-            <button type="submit" class="btn btn-primary mb-2">Upload</button>
 
         </form>
     </div>
@@ -34,3 +34,41 @@
         @endif
     </div>
 </div>
+
+<style>
+    .button {
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: darkseagreen;
+        color: black;
+        border: 3px solid #4CAF50;
+    }
+
+    .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .label {
+        font-size: 20px;
+        color: black;
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 25px;
+    }
+
+</style>
