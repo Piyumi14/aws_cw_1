@@ -21,7 +21,7 @@ class ImageController extends Controller
 
     public function store(Request $request)
     {
-//        dd("ddddd--------");
+        dd("ddddd--------");
 
 //        $this->validate($request, [
 //            'file' => 'required|max:2048'
