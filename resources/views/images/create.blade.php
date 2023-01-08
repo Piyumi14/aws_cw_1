@@ -1,16 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>My Image App</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="max-w-lg mx-auto py-8">
-    <form action="/" method="post" class="flex items-center justify-between border border-gray-300 p-4 rounded" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="file" name="image" id="image">
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Upload File</button>
-    </form>
+<div class="row">
+    <h3>Upload File</h3>
+    <div class="card col-sm-12">
+
+        <form action="{{ url('/store') }}" method="POST" enctype="multipart/form-data" class="form-inline">
+
+            {{ csrf_field() }}
+
+            <div class="form-group">
+                <label for="file">Select File</label>
+                <input class="form-control-file" type="file" name="file" id="file">
+            </div>
+
+            <button type="submit" class="btn btn-primary mb-2">Upload</button>
+
+        </form>
+    </div>
 </div>
-</body>
-</html>
+
+{{--<div class="row">--}}
+{{--    <h3>Files</h3>--}}
+{{--    <div class="card col-sm-12">--}}
+{{--        @if (count($files) > 0)--}}
+{{--            @foreach ($files as $file)--}}
+{{--                <a href="{{ url($file['downloadUrl']) }}">{{ $file['name'] }}</a>--}}
+{{--                <form action="{{ url($file['removeUrl']) }}" method="POST">--}}
+{{--                    {{ csrf_field() }}--}}
+{{--                    {{ method_field('DELETE') }}--}}
+{{--                    <button type="submit" class="btn btn-default">Remove</button>--}}
+{{--                </form>--}}
+{{--            @endforeach--}}
+{{--        @else--}}
+{{--            <p>Nothing found</p>--}}
+{{--        @endif--}}
+{{--    </div>--}}
+{{--</div>--}}

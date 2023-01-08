@@ -2,7 +2,7 @@
 
 Route::get('/', 'App\Http\Controllers\ImageController@create');
 Route::get('/test', 'App\Http\Controllers\ImageController@test');
-Route::post('/', 'App\Http\Controllers\ImageController@store');
+Route::post('/store', 'App\Http\Controllers\ImageController@store');
 Route::get('/{image}', 'App\Http\Controllers\ImageController@show');
 
 //Route::get('/', 'App\Http\Controllers\UploadController@index');
