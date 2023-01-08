@@ -21,6 +21,7 @@ class ImageController extends Controller
 
     public function store(Request $request)
     {
+        dd("ddddd--------");
         $path = $request->file('image')->store('images', 's3');
 
         Storage::disk('s3')->setVisibility($path, 'public');
